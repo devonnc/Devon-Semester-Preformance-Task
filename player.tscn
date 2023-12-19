@@ -4,14 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://vs551jdj25r0" path="res://assets/player.png" id="1_ogeuy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s21ah"]
-radius = 147.0
+radius = 136.033
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_6c5tt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-27.875, -6.25)
+scale = Vector2(0.913185, 0.984722)
 texture = ExtResource("1_ogeuy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 6)
+position = Vector2(-32, 0)
 shape = SubResource("CircleShape2D_s21ah")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 2.66454e-15
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_shape_entered"]
