@@ -6,12 +6,13 @@
 radius = 367.0
 height = 1014.0
 
-[node name="Enemy" type="Sprite2D"]
+[node name="Enemy" type="RigidBody2D"]
 position = Vector2(926, 303)
 scale = Vector2(0.463104, 0.44297)
-texture = ExtResource("1_ojiqw")
+gravity_scale = 2.66454e-15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ispil")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ojiqw")
